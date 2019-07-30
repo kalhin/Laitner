@@ -1,12 +1,15 @@
 import React from "react";
 
+import styles from "./styleSheet"
 import "./input.scss";
 
 class Input extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ""
+      value: "",
+      sourceFieldError: false,
+      translateFieldError: false
     };
   }
 
@@ -23,17 +26,21 @@ class Input extends React.Component {
     const regExpTextLKiril = /[^а-яёА-ЯЁ ]/u;
     const regExpSpace = /^\s/;
 
-    if (textAreaName === "input") {
+    if (textAreaName === "source") {
       if (!regExpTextLatin.test(value) && !regExpSpace.test(value)) {
         console.log(textAreaName, true);
+        this.setState({sourceFieldError: false});
       } else {
         console.log(textAreaName, false);
+        this.setState({sourceFieldError: true});
       }
     } else if (textAreaName === "translate") {
       if (!regExpTextLKiril.test(value) && !regExpSpace.test(value)) {
         console.log(textAreaName, true);
+        this.setState({translateFieldError: false});
       } else {
         console.log(textAreaName, false);
+        this.setState({translateFieldError: true});
       }
     }
   };
@@ -44,6 +51,7 @@ class Input extends React.Component {
         {this.props.label}
         <textarea
           className = "inputTextArea"
+
           name={this.props.textAreaName}
           type="text"
           placeholder={this.props.placeholder}

@@ -15,8 +15,8 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className = "fields-container">
-        <Input textAreaName = {"input"} placeholder = {"Original word/text"} />
-        <Input textAreaName = {"translate"} placeholder = {"Translate word/text"} />
+        <Input label = {"source word/text"} textAreaName = {"source"} placeholder = {"Original word/text"} />
+        <Input label = {"translate word/text"} textAreaName = {"translate"} placeholder = {"Translate word/text"} />
       </div>
     );
   }
