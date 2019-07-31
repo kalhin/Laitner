@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./styleSheet"
+import inputBorderColor from "./styleSheet"
 import "./input.scss";
 
 class Input extends React.Component {
@@ -51,7 +51,7 @@ class Input extends React.Component {
         {this.props.label}
         <textarea
           className = "inputTextArea"
-
+          style = {inputBorderColor}
           name={this.props.textAreaName}
           type="text"
           placeholder={this.props.placeholder}

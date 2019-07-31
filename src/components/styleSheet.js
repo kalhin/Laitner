@@ -1,9 +1,7 @@
 import "../index.scss"
 
-const styles = StyleSheet.create({
-    input: {
+const inputBorderColor = {
         borderColor: "red_color"
     }
-});
 
-export default styles;
+export default inputBorderColor;
