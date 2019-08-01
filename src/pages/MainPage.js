@@ -2,6 +2,7 @@ import React from "react";
 
 import "./mainPage.scss";
 import Input from "../components/Input";
+import InfoIcon from "../components/InfoIcon"
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -15,8 +16,15 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className = "fields-container">
-        <Input label = {"source word/text"} textAreaName = {"source"} placeholder = {"Original word/text"} />
-        <Input label = {"translate word/text"} textAreaName = {"translate"} placeholder = {"Translate word/text"} />
+        <InfoIcon></InfoIcon>
+        <Input 
+          label = {"source word/text"} 
+          textAreaName = {"source"} 
+          placeholder = {"Original word/text"} />
+        <Input 
+          label = {"translate word/text"} 
+          textAreaName = {"translate"} 
+          placeholder = {"Translate word/text"} />
       </div>
     );
   }
